@@ -153,7 +153,7 @@ function TaskDetails({ api, user }) {
     if (task.estatus == 0) {
       return <p>Task Pending</p>;
     } else if (task.estatus == 1) {
-      return <p>Task Asigned</p>;
+      return <p>Task Assigned</p>;
     } else {
       return <p>Task Completed</p>;
     }
@@ -184,29 +184,51 @@ function TaskDetails({ api, user }) {
             </div>
             <div>
               <label htmlFor="descripcion">
-                Asign a new description for the current task:
-              </label>
-              <div className="simple"></div>
-              <input
-                type="text"
-                id="descripcion"
-                name="descripcion"
-                value={updateTask.descripcion}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="estatus">
-                Asign a new state for the task:
+                Assign a new description for the current task:
               </label>
               <div className="simple">
                 <input
                   type="text"
-                  id="usuarioAsignado"
-                  name="estatus"
-                  value={updateTask.estatus}
+                  id="descripcion"
+                  name="descripcion"
+                  value={updateTask.descripcion}
                   onChange={handleInputChange}
                 />
+              </div>
+            </div>
+            <div>
+              <label>Assign a new state for the task:</label>
+              <div className="simple">
+                <label>
+                  <input
+                    type="radio"
+                    name="estatus"
+                    value="0"
+                    checked={updateTask.estatus === "0"}
+                    onChange={handleInputChange}
+                  />
+                  Pending
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="estatus"
+                    value="1"
+                    checked={updateTask.estatus === "1"}
+                    onChange={handleInputChange}
+                  />
+                  Assigned
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="estatus"
+                    value="2"
+                    checked={updateTask.estatus === "2"}
+                    onChange={handleInputChange}
+                  />
+                  Completed
+                </label>
               </div>
             </div>
             <button type="submit">Save</button>
