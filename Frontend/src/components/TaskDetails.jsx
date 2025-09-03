@@ -196,7 +196,7 @@ function TaskDetails({ api, user }) {
               />
             </div>
             <div>
-              <label htmlFor="usuarioAsignado">
+              <label htmlFor="estatus">
                 Asign a new state for the task:
               </label>
               <div className="simple">
@@ -204,7 +204,7 @@ function TaskDetails({ api, user }) {
                   type="text"
                   id="usuarioAsignado"
                   name="estatus"
-                  value={updateTask.usuarioAsignado}
+                  value={updateTask.estatus}
                   onChange={handleInputChange}
                 />
               </div>
